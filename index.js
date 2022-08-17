@@ -10,7 +10,7 @@ const io = socketIO(server);
 app.set("port", process.env.PORT || 8080);
 const PORT = app.get("port");
 app.use(express.static(path.join(__dirname, "/public")));
-app.get("/kekeoTalk", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/public/html/index.html"));
 });
 io.on("connection", (socket) => {
